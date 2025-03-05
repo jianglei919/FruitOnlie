@@ -1,7 +1,9 @@
 package com.conestoga.group12.fruitonline.model
 
+import java.io.Serializable
+
 data class CartItem(
-    val productItem: Product,
-    val totalPrice: Double,
-    val totalQuantity: Int,
-)
+    var productItem: Product,
+    var totalPrice: Double,
+    var totalQuantity: Int,
+) : Serializable

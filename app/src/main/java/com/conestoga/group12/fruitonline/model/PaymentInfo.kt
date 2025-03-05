@@ -1,5 +1,7 @@
 package com.conestoga.group12.fruitonline.model
 
+import java.io.Serializable
+
 data class PaymentInfo(
     var firstName : String,
     var lastName : String,
@@ -13,4 +15,4 @@ data class PaymentInfo(
     var paymentMethod : String,
     var cardNumber : String,
     var cvv : String,
-)
+) : Serializable

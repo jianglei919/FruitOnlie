@@ -1,5 +1,7 @@
 package com.conestoga.group12.fruitonline.model
 
+import java.io.Serializable
+
 data class Product (
     var productId: String,
     var productName: String,
@@ -9,4 +11,4 @@ data class Product (
     var store: String,
     var description: String,
     var quantity: Int,
-)
+) : Serializable
