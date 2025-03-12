@@ -6,11 +6,11 @@ plugins {
 
 android {
     namespace = "com.conestoga.group12.fruitonline"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.conestoga.group12.fruitonline"
-        minSdk = 34
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.firebase.database)
     implementation(libs.firebase.storage)
     implementation(libs.firebase.auth.ktx)
+    implementation(libs.glide)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
