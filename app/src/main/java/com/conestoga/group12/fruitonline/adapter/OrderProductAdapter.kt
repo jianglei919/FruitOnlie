@@ -14,8 +14,8 @@ import com.conestoga.group12.fruitonline.constant.CommonConstant
 import com.conestoga.group12.fruitonline.model.Product
 import com.conestoga.group12.fruitonline.utils.ImageUtils.loadImageFromStorage
 
-class ProductAdapter(private val productList: List<Product>, private val context: Context) :
-    RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+class OrderProductAdapter(private val productList: List<Product>, private val context: Context) :
+    RecyclerView.Adapter<OrderProductAdapter.ProductViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.row_layout, parent, false)
         return ProductViewHolder(view)

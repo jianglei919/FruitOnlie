@@ -13,10 +13,12 @@ class CartManager private constructor() {
     fun addToCart(item: CartItem) {
         for (cartItem in cartItems) {
             val productItem = cartItem.productItem
-            if (productItem.productId == item.productItem.productId) {
-                // If the product exist, add quantity
-                cartItem.totalQuantity = cartItem.productItem.quantity + item.productItem.quantity
-                return
+            if (productItem != null) {
+                if (productItem.productId == item.productItem!!.productId) {
+                    // If the product exist, add quantity
+                    cartItem.totalQuantity = cartItem.productItem!!.quantity + item.productItem!!.quantity
+                    return
+                }
             }
         }
         // If the product not exist, add new product
@@ -24,7 +26,7 @@ class CartManager private constructor() {
     }
 
     fun removeFromCart(productId: String) {
-        cartItems.removeIf { item: CartItem -> item.productItem.productId == productId }
+        cartItems.removeIf { item: CartItem -> item.productItem!!.productId == productId }
     }
 
     fun clearCart() {
@@ -35,14 +37,14 @@ class CartManager private constructor() {
         get() {
             var total = 0.0
             for (item in cartItems) {
-                total += item.productItem.price * item.productItem.quantity
+                total += item.productItem!!.price * item.productItem!!.quantity
             }
             return total
         }
 
     fun updateItemQuantity(productId: String, quantity: Int) {
         for (item in cartItems) {
-            if (item.productItem.productId == productId) {
+            if (item.productItem!!.productId == productId) {
                 item.totalQuantity = quantity
                 break
             }
